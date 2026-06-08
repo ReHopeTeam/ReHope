@@ -1,0 +1,6 @@
+@ReHope_HostAddress = http://localhost:5011
+
+GET {{ReHope_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
