@@ -17,7 +17,7 @@ namespace ReHope.Applications.Conversoes
                 StatusProduto = produto.StatusProduto,
                 CategoriaID = produto.CategoriaID,
                 LocalizacaoID = produto.LocalizacaoID,
-                Imagem = $"produto/{produto.ProdutoID}/imagem",
+                Imagem = produto.Imagem,
                 UsuarioID = produto.UsuarioID,
 
             };
