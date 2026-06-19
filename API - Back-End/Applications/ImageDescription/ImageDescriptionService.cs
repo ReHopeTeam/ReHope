@@ -1,5 +1,6 @@
 ﻿using Google.GenAI;
 using Google.GenAI.Types;
+using ReHope.Exceptions;
 using ReHope.Interfaces;
 
 namespace ReHope.Applications.ImageDescription
@@ -71,7 +72,7 @@ namespace ReHope.Applications.ImageDescription
 
                 GenerateContentResponse response =
                     await client.Models.GenerateContentAsync(
-                        model: "gemini-2.0-flash",
+                        model: "gemini-2.5-flash",
                         contents: conteudo
                     );
 
@@ -80,7 +81,23 @@ namespace ReHope.Applications.ImageDescription
             }
             catch (Exception ex)
             {
-                throw new Exception($"Erro ao gerar descrição: {ex.Message}");
+                if (ex.Message.Contains("high demand"))
+                {
+                    throw new DomainException(
+                        "A geração automática de descrição está temporariamente indisponível devido à alta demanda do serviço. Tente novamente mais tarde ou preencha a descrição manualmente."
+                    );
+                }
+
+                if (ex.Message.Contains("quota exceeded"))
+                {
+                    throw new DomainException(
+                        "O limite de utilização do serviço de IA foi atingido. Tente novamente mais tarde."
+                    );
+                }
+
+                throw new DomainException(
+                    "Não foi possível gerar a descrição do produto."
+                );
             }
         }
     }
