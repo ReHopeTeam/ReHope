@@ -149,9 +149,16 @@ namespace ReHope.Applications.Services
         {
             Produto produtoBanco = _repository.ObterPorId(id);
 
+            Console.WriteLine(produtoDto.Tamanho);
+
             if (produtoBanco == null)
             {
                 throw new DomainException("Produto não encontrado.");
+            }
+
+            if (produtoBanco.Imagem == null)
+            {
+                throw new DomainException("Produto precisa de uma imagem.");
             }
 
             if (produtoDto.NomeProduto == null)

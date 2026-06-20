@@ -7,7 +7,7 @@
         public string Descricao { get; set; } = null!;
         public int Codigo { get; set; }
         public string? Tamanho { get; set; }
-        public IFormFile Imagem { get; set; } = null!;
+        public IFormFile? Imagem { get; set; }
         public bool? StatusProduto { get; set; }
         public int CategoriaID { get; set; }
         public int LocalizacaoID { get; set; }

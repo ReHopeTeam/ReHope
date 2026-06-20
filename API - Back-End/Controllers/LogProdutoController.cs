@@ -28,7 +28,7 @@ namespace ReHope.Controllers
 
 
         [Authorize]
-        [HttpGet("produto/{id}")]
+        [HttpGet("produto/")]
         public ActionResult<List<LerLogProdutoDto>> BuscarLogProdutoPorPodutoId(Guid produtoId)
         {
             try

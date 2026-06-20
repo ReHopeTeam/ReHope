@@ -12,10 +12,9 @@ namespace ReHope.DTOs.ProdutoDto
         public string? Tamanho { get; set; }
         public string? Imagem { get; set; }
         public bool? StatusProduto { get; set; }
-
-
         public int CategoriaID { get; set; }
         public int LocalizacaoID { get; set; }
         public Guid UsuarioID { get; set; }
+        public int TipoProdutoID { get; set; }
     }
 }
