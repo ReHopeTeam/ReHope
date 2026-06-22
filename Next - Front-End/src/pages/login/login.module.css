@@ -1,0 +1,102 @@
+/*? ====================== */
+/*?   Estrutura de Login   */
+/*? ====================== */
+#login {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 30vw);
+  height: 100vh;
+}
+
+#login_form {
+  z-index: 2;
+  box-shadow: 0px 0 75px 25px var(--preto);
+}
+
+#form {
+  width: 80%;
+}
+
+.login_svg {
+  position: fixed;
+  z-index: 2;
+}
+
+/*? ======================== */
+/*?   Carrossel de Imagens   */
+/*? ======================== */
+.img_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#login_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  view-transition-name: carrossel-imagem;
+}
+
+.login_img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.ativa {
+  opacity: 1;
+}
+
+/*? =========================== */
+/*?   Elementos do Formulário   */
+/*? =========================== */
+#img {
+  height: 100px;
+  filter: invert(20%) sepia(14%) saturate(1200%) hue-rotate(76deg)
+    brightness(25%) contrast(105%);
+}
+
+:global(html.darkmode) #img {
+  filter: brightness(1);
+}
+
+#h1 {
+  color: var(--verde-fonte);
+}
+
+#tema_btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+#voltar {
+  bottom: 20px;
+  position: fixed;
+  text-align: center;
+  background: var(--bg);
+  padding: var(--padding-md);
+  box-shadow: 0 5px 10px color-mix(in srgb, var(--verde-fonte), transparent 75%);
+  border-radius: var(--radius-md);
+}
+
+/*? ================= */
+/*?   Media Queries   */
+/*? ================= */
+@media (max-width: 768px) {
+  #login {
+    grid-template-columns: 1fr;
+  }
+
+  .img_wrapper {
+    display: none;
+  }
+
+  .login_svg {
+    opacity: 0.1;
+  }
+}

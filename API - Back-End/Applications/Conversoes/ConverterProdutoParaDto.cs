@@ -14,15 +14,18 @@ namespace ReHope.Applications.Conversoes
                 Preco = produto.Preco,
                 Descricao = produto.Descricao,
                 Codigo = produto.Codigo,
-        
+
                 Tamanho = produto.Tamanho,
-        
+
                 StatusProduto = produto.StatusProduto,
                 CategoriaID = produto.CategoriaID,
                 LocalizacaoID = produto.LocalizacaoID,
-                Imagem = produto.Imagem,
                 UsuarioID = produto.UsuarioID,
-        
+
+                Imagem = produto.Imagem != null
+                ? Convert.ToBase64String(produto.Imagem)
+                : null,
+
                 TipoProdutoID = produto.Categoria.TipoProdutoID
             };
         }

@@ -72,7 +72,7 @@ namespace ReHope.Applications.ImageDescription
 
                 GenerateContentResponse response =
                     await client.Models.GenerateContentAsync(
-                        model: "gemini-2.5-flash",
+                        model: "gemini-2.5-flash-lite",
                         contents: conteudo
                     );
 

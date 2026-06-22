@@ -1,0 +1,133 @@
+/*? ====================== */
+/*?   Listagem e Filtros   */
+/*? ====================== */
+#lista {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 80%;
+  margin-top: 2.5vh;
+}
+
+#filtros {
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/*? ======================= */
+/*?   Botões de Paginação   */
+/*? ======================= */
+#btn_padrao,
+#btn_ativo,
+#btn_inativo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--height);
+  height: var(--height);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+#btn_padrao:hover,
+#btn_ativo:hover,
+#btn_inativo:hover {
+  transform: translateY(-2px);
+}
+
+#btn_padrao {
+  background: color-mix(in srgb, var(--verde-fonte) 15%, transparent);
+  border: 2px solid var(--verde-fonte);
+}
+
+#btn_padrao svg {
+  stroke: var(--verde-fonte);
+}
+
+#btn_ativo {
+  background: color-mix(in srgb, var(--verde-vivo) 15%, transparent);
+  border: 2px solid var(--verde-vivo);
+}
+
+#btn_ativo svg {
+  stroke: var(--verde-vivo);
+}
+
+#btn_inativo {
+  background: color-mix(in srgb, var(--vermelho) 15%, transparent);
+  border: 2px solid var(--vermelho);
+}
+
+#btn_inativo svg {
+  stroke: var(--vermelho);
+}
+
+/* Esconde completamente o botão nativo do navegador */
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Container das setas customizadas */
+.spin_controles {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  height: calc(100% - 4px);
+  width: 26px;
+  display: flex;
+  flex-direction: column;
+  z-index: 101; /* Fica acima do input */
+  border-left: 1px solid var(--border-input);
+}
+
+/* Cada botão individual (Cima / Baixo) */
+.spin_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: background 0.15s ease;
+}
+
+/* Estilo individual para os ícones dentro deles */
+.spin_btn :global(.reset_lucide) {
+  stroke: var(--verde-secundario);
+}
+
+/* Efeito hover individual e refinado */
+.spin_btn:hover {
+  background: color-mix(in srgb, var(--verde-secundario) 15%, transparent);
+}
+
+.spin_btn:hover :global(.reset_lucide) {
+  stroke: var(--verde-vivo);
+}
+
+/* Arredonda os cantos correspondentes ao input */
+.spin_btn:first-child {
+  border-top-right-radius: var(--radius-md);
+}
+.spin_btn:last-child {
+  border-bottom-right-radius: var(--radius-md);
+  border-top: 1px solid color-mix(in srgb, var(--border-input) 50%, transparent);
+}

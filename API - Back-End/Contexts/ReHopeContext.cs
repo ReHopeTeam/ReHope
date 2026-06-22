@@ -107,7 +107,7 @@ public partial class ReHopeContext : DbContext
 
             entity.Property(e => e.ProdutoID).HasDefaultValueSql("(newid())");
             entity.Property(e => e.Codigo).ValueGeneratedOnAdd();
-            entity.Property(e => e.Imagem).IsUnicode(false);
+            entity.Property(e => e.Imagem).HasColumnType("varbinary(max)");
             entity.Property(e => e.NomeProduto).HasMaxLength(100);
             entity.Property(e => e.Preco).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.StatusProduto).HasDefaultValue(true);

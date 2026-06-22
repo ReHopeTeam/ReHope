@@ -2,15 +2,15 @@
 {
     public class ConverterImagemParaBytes
     {
-        public static string ConverterImagem(IFormFile imagem)
+        public static byte[]? ConverterImagem(IFormFile imagem)
         {
-            if (imagem == null || imagem.Length == 0) return null!;
+            if (imagem == null || imagem.Length == 0)
+                return null;
 
             using var ms = new MemoryStream();
             imagem.CopyTo(ms);
-            byte[] imagemBytes = ms.ToArray();
 
-            return Convert.ToBase64String(imagemBytes);
+            return ms.ToArray();
         }
     }
 }

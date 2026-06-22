@@ -123,15 +123,16 @@ namespace ReHope.Applications.Services
         {
             ValidarCadastro(produtoDto);
 
-            string descricao = await GerarDescricaoProdutoAsync(produtoDto);
+            //string descricao = await GerarDescricaoProdutoAsync(produtoDto);
 
-            await ValidarConteudoProdutoAsync(produtoDto.NomeProduto, descricao);
+            //await ValidarConteudoProdutoAsync(produtoDto.NomeProduto, descricao);
 
             Produto produto = new Produto
             {
                 NomeProduto = produtoDto.NomeProduto,
                 Preco = produtoDto.Preco,
-                Descricao = descricao,
+                //Descricao = descricao,
+                Descricao = produtoDto.Descricao,
                 Tamanho = produtoDto.Tamanho,
                 Imagem = ConverterImagemParaBytes.ConverterImagem(produtoDto.Imagem),
                 StatusProduto = true,

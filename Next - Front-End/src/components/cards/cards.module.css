@@ -1,0 +1,170 @@
+/*? ===================== */
+/*?   Contêiner do Card   */
+/*? ===================== */
+#card,
+.cardFantasma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 16rem;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: var(--background-card, #202020);
+}
+
+/*? ============================================ */
+/*?   Contêiner da Imagem e Elementos Internos   */
+/*? ============================================ */
+.imagemContainer img,
+#img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  height: auto;
+}
+
+.imagemContainer a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.imagemContainer img,
+#img {
+  width: 16rem;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  transition: filter 0.2s;
+}
+
+.imagemContainer img:hover,
+#img:hover {
+  filter: brightness(0.8) sepia(100%) hue-rotate(80deg) saturate(150%);
+}
+
+.preco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--height);
+  background: color-mix(in srgb, var(--bg) 90%, var(--verde-tema));
+  color: var(--verde-fonte);
+}
+
+/*? ============================ */
+/*?   Estágio de Card Fantasma   */
+/*? ============================ */
+.cardFantasma {
+  pointer-events: none;
+  border: 2px dashed var(--verde-fonte);
+  opacity: 0.3;
+  filter: grayscale(90%);
+}
+
+/*? ================== */
+/*?   Botões do Card   */
+/*? ================== */
+.btn_card {
+  max-width: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--height);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn_card:hover,
+.btn_card:active {
+  transform: translateY(0);
+}
+
+.editar {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+  background: var(--verde-primario);
+}
+
+.excluir {
+  gap: 0.5rem;
+  background: hsl(350, 55%, 30%);
+}
+
+/*? ================================== */
+/*?   Media Queries (Responsividade)   */
+/*? ================================== */
+@media (max-width: 1080px) {
+  .to_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #card,
+  .cardFantasma {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .imagemContainer {
+    position: relative;
+  }
+
+  .tituloProduto {
+    position: absolute;
+    margin: 0 auto;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    background: var(--verde-primario);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 2;
+  }
+
+  .btn_card p {
+    display: none;
+  }
+
+  .botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  #card,
+  .cardFantasma {
+    width: 100%;
+  }
+
+  .imagemContainer {
+    position: relative;
+  }
+
+  .btn_card p {
+    display: none;
+  }
+
+  .botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
+}

@@ -1,0 +1,13 @@
+<svg width="169" height="169" viewBox="0 0 169 169" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<circle cx="84.1484" cy="84.1487" r="45" stroke="white" stroke-width="10"/>
+<g id="Sol_3_inner" data-figma-trr="r8u5-0f">
+<path d="M79.1484 5.14868C79.1484 2.38726 81.387 0.148682 84.1484 0.148682C86.9099 0.148682 89.1484 2.38726 89.1484 5.14868V23.1487C89.1484 25.9101 86.9099 28.1487 84.1484 28.1487C81.387 28.1487 79.1484 25.9101 79.1484 23.1487V5.14868Z" fill="white"/>
+</g>
+<use xlink:href="#Sol_3_inner" transform="translate(84.1487 -34.8555) rotate(45)"/>
+<use xlink:href="#Sol_3_inner" transform="translate(168.297) rotate(90)"/>
+<use xlink:href="#Sol_3_inner" transform="translate(203.153 84.1487) rotate(135)"/>
+<use xlink:href="#Sol_3_inner" transform="translate(168.297 168.297) rotate(-180)"/>
+<use xlink:href="#Sol_3_inner" transform="translate(84.1487 203.153) rotate(-135)"/>
+<use xlink:href="#Sol_3_inner" transform="translate(2.69203e-06 168.297) rotate(-90)"/>
+<use xlink:href="#Sol_3_inner" transform="translate(-34.8555 84.1486) rotate(-45)"/>
+</svg>

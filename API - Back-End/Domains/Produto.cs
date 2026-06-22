@@ -17,7 +17,7 @@ public partial class Produto
 
     public string? Tamanho { get; set; }
 
-    public string? Imagem { get; set; }
+    public byte[]? Imagem { get; set; }
 
     public bool StatusProduto { get; set; }
 
